@@ -150,6 +150,7 @@ class _TaskTabState extends State<TaskTab> {
 
                   ],
                 ),
+
                 const SizedBox(height: 20),
 
                 // Search Bar
@@ -174,6 +175,8 @@ class _TaskTabState extends State<TaskTab> {
                     ),
                   ),
                 ),
+
+
                 const SizedBox(height: 10),
 
                 // Date Picker Card
@@ -266,6 +269,8 @@ class _TaskTabState extends State<TaskTab> {
                     ),
                   ),
                 ),
+
+
                 const SizedBox(height: 20),
 
                 // Horizontally Scrollable Filters
@@ -305,6 +310,8 @@ class _TaskTabState extends State<TaskTab> {
                     },
                   ),
                 ),
+
+
                 const SizedBox(height: 20),
 
                 // Reactive Task List Builder
@@ -336,8 +343,7 @@ class _TaskTabState extends State<TaskTab> {
 
 
 
-List<Map<String, dynamic>> _tasks =
-  [
+List<Map<String, dynamic>> _tasks = [
     {
       "id": 1,
       "project_id": 2,
