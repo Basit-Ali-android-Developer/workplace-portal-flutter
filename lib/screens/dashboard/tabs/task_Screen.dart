@@ -85,12 +85,19 @@ class _TaskTabState extends State<TaskTab> {
               children: [
                 // Profile & Title Row
                 Row(
-                  children: const [
-                    CircleAvatar(
-                      radius: 28,
-                      backgroundImage: AssetImage('assets/images/profile_image.png'),
+                  children:  [
+
+                    Image.asset(
+                      'assets/images/logo.png',
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
                     ),
+
+
                     SizedBox(width: 15),
+
+
                     Text(
                       "Workplace Portal",
                       style: TextStyle(
@@ -101,6 +108,8 @@ class _TaskTabState extends State<TaskTab> {
                     ),
                   ],
                 ),
+
+
                 const SizedBox(height: 20),
 
                 // Subtitle & Actions Row
@@ -182,7 +191,9 @@ class _TaskTabState extends State<TaskTab> {
                 // Date Picker Card
                 GestureDetector(
                   onTap: () => _selectDate(context), // Launches date selector
-                  child: Card(
+                  child:
+
+                  Card(
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18),
@@ -274,6 +285,7 @@ class _TaskTabState extends State<TaskTab> {
                 const SizedBox(height: 20),
 
                 // Horizontally Scrollable Filters
+
                 SizedBox(
                   height: 42,
                   child: ListView.separated(
@@ -315,6 +327,7 @@ class _TaskTabState extends State<TaskTab> {
                 const SizedBox(height: 20),
 
                 // Reactive Task List Builder
+
                 SizedBox(
                   child: filteredTask.isEmpty
                       ? const EmptyState()

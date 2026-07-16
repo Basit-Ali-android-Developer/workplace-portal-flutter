@@ -77,14 +77,11 @@ class _TimerTabState extends State<TimerTab> {
               // Title Bar -------------------------------------------------------------
               Row(
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: AppColors.primary,
-                    ),
+                  Image.asset(
+                    'assets/images/logo.png',
+                    width: 50,
+                    height: 50,
+                    fit: BoxFit.cover, // Ensures the image fills the space nicely without distortion
                   ),
 
                   const SizedBox(width: 15),

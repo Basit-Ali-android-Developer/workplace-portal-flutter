@@ -78,12 +78,13 @@ class _ProjectTabState extends State<ProjectTab> {
 
               Row(
                 children: [
-                  CircleAvatar(
-                    radius: 28,
-                    backgroundImage: AssetImage(
-                      'assets/images/profile_image.png',
-                    ),
+                  Image.asset(
+                    'assets/images/logo.png',
+                    width: 50,
+                    height: 50,
+                    fit: BoxFit.cover,
                   ),
+
 
                   SizedBox(width: 15),
 
