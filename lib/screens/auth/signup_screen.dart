@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:workplace/core/constants/app_colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:workplace/screens/auth/login_screen.dart';
+import 'package:workplace/widgets/buttons/primary_button.dart';
+import 'package:workplace/widgets/textfield/primary_text_field.dart';
 
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen ({super.key});
+   SignUpScreen ({super.key});
+
+   final _nameController = TextEditingController();
+   final _emailController = TextEditingController();
+   final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: GestureDetector(
         onTap: () {
@@ -71,91 +78,76 @@ class SignUpScreen extends StatelessWidget {
 
               SizedBox(height: 30),
 
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Name",
-                  hintText: "Enter your name",
-                  prefixIcon: const Icon(Icons.person),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
+
+
+              PrimaryTextField(
+                controller: _nameController,
+                labelText: "Name",
+                hintText: "Enter your name",
+                prefixIcon: Icons.person,
               ),
 
 
               SizedBox(height: 10),
 
 
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Email",
-                  hintText: "Enter your email",
-                  prefixIcon: const Icon(Icons.email),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
+              PrimaryTextField(
+                controller: _emailController,
+                labelText: "Email",
+                hintText: "Enter your email",
+                prefixIcon: Icons.email,
               ),
 
 
               SizedBox(height: 10),
 
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  hintText: "Enter your password",
-                  prefixIcon: const Icon(Icons.lock),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
+
+
+              PrimaryTextField(
+                controller: _passwordController,
+                labelText: "Password",
+                hintText: "Enter your password",
+                isObscure: true,
+                prefixIcon: Icons.lock,
               ),
 
               SizedBox(height: 40),
 
-              SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.secondary,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+
+              PrimaryButton(
+                title: "Sign Up",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
                     ),
-                  ),
-                  child: const Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                  );
+                },
               ),
 
               SizedBox(height: 60),
+
+
+
 
               Text(
                 "By continuing you agree to our",
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
               ),
 
+
+
               Text(
                 "Terms of Service and Privacy Policy",
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold,color: AppColors.primary),
               ),
 
+
+
               SizedBox(height: 30),
+
+
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -170,7 +162,7 @@ class SignUpScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
+                          builder: (context) =>  LoginScreen(),
                         ),
                       );
                     },
@@ -185,6 +177,7 @@ class SignUpScreen extends StatelessWidget {
 
                 ],
               ),
+
 
             ],
           ),

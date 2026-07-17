@@ -1,5 +1,7 @@
 import'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:workplace/core/constants/app_colors.dart';
+import 'package:workplace/widgets/cards/CustomCard.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -33,6 +35,7 @@ class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
      body: SafeArea(
      child: SingleChildScrollView(
        padding: const EdgeInsets.all(20),
@@ -42,7 +45,7 @@ class _HomeTabState extends State<HomeTab> {
            // title bar shows profile image and welcome message ---------------------------------------------------------
 
            Row(
-         children: [
+            children: [
            CircleAvatar(
              radius: 28,
              backgroundImage: AssetImage(
@@ -83,164 +86,155 @@ class _HomeTabState extends State<HomeTab> {
 
            // weekly progress card --------------------------------------------------------------------------------------
 
-           Card(
-             elevation: 4,
-             shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.circular(18),
-             ),
-             child: Padding(
-               padding: const EdgeInsets.all(20),
-               child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
+
+           CustomCard(
+             color: AppColors.white,
+             child: Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
-                     Row(
-                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                       children: [
-                         Text(
-                           "Weekly Progress",
-                           style: TextStyle(
-                             fontSize: 18,
-                             fontWeight: FontWeight.bold,
-                           ),
-                         ),
-
-                         Icon(Icons.trending_up),
-                       ],
+                     Text(
+                       "Weekly Progress",
+                       style: TextStyle(
+                         fontSize: 18,
+                         fontWeight: FontWeight.bold,
+                       ),
                      ),
 
+                     Icon(Icons.trending_up),
+                   ],
+                 ),
 
-                     SizedBox(height: 20),
 
-                     Row(
-                       //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                       children: [
-                         Expanded(
-                             child:  Column(
-                               children: [
-                                 Text(
-                                   "42",
-                                   style: TextStyle(
-                                     fontSize: 22,
-                                     fontWeight: FontWeight.bold,
-                                     color: AppColors.primaryText,
-                                   ),
-                                 ),
+                 SizedBox(height: 20),
 
-                                 //  SizedBox(height: 20),
-
-                                 Text(
-                                   "Hours tracked",
-                                   style: TextStyle(
-                                     fontSize: 14,
-                                     fontWeight: FontWeight.normal,
-                                     color: AppColors.greyText,
-                                   ),
-                                 ),
-                               ],
+                 Row(
+                   //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     Expanded(
+                       child:  Column(
+                         children: [
+                           Text(
+                             "42",
+                             style: TextStyle(
+                               fontSize: 22,
+                               fontWeight: FontWeight.bold,
+                               color: AppColors.primaryText,
                              ),
-                         ),
+                           ),
 
+                           //  SizedBox(height: 20),
 
-                         Expanded(
-                             child:Column(
-                               children: [
-                                 Text(
-                                   "12",
-                                   style: TextStyle(
-                                     fontSize: 22,
-                                     fontWeight: FontWeight.bold,
-                                     color: AppColors.primaryText,
-                                   ),
-                                 ),
-
-                                 //  SizedBox(height: 20),
-
-                                 Text(
-                                   "Tasks completed",
-                                   style: TextStyle(
-                                     fontSize: 14,
-                                     fontWeight: FontWeight.normal,
-                                     color: AppColors.greyText,
-                                   ),
-                                 ),
-                               ],
+                           Text(
+                             "Hours tracked",
+                             style: TextStyle(
+                               fontSize: 14,
+                               fontWeight: FontWeight.normal,
+                               color: AppColors.greyText,
                              ),
-                         ),
-
-                       ],
+                           ),
+                         ],
+                       ),
                      ),
 
-                     SizedBox(height: 20),
 
-                     Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                       children: [
-
-                         Text(
-                           "Weekly Goal: 50h",
-                           style: TextStyle(
-                             fontSize: 14,
-                             fontWeight: FontWeight.normal,
-                             color: AppColors.greyText,
+                     Expanded(
+                       child:Column(
+                         children: [
+                           Text(
+                             "12",
+                             style: TextStyle(
+                               fontSize: 22,
+                               fontWeight: FontWeight.bold,
+                               color: AppColors.primaryText,
+                             ),
                            ),
-                         ),
 
-                         Text(
-                           "84%",
-                           style: TextStyle(
-                             fontSize: 14,
-                             fontWeight: FontWeight.normal,
-                             color: AppColors.greyText,
+                           //  SizedBox(height: 20),
+
+                           Text(
+                             "Tasks completed",
+                             style: TextStyle(
+                               fontSize: 14,
+                               fontWeight: FontWeight.normal,
+                               color: AppColors.greyText,
+                             ),
                            ),
-                         ),
-                       ],
+                         ],
+                       ),
                      ),
-
-                     SizedBox(height: 10),
-
-                     LinearProgressIndicator(
-                       value: 0.84, // 75%
-                       minHeight: 12,
-                       borderRadius: BorderRadius.circular(10),
-                       // Unfilled part
-                       backgroundColor: Colors.grey.shade300,
-
-                       // Filled part
-                       valueColor: AlwaysStoppedAnimation(AppColors.primary),
-                     )
 
                    ],
-               ),
+                 ),
+
+                 SizedBox(height: 20),
+
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+
+                     Text(
+                       "Weekly Goal: 50h",
+                       style: TextStyle(
+                         fontSize: 14,
+                         fontWeight: FontWeight.normal,
+                         color: AppColors.greyText,
+                       ),
+                     ),
+
+                     Text(
+                       "84%",
+                       style: TextStyle(
+                         fontSize: 14,
+                         fontWeight: FontWeight.normal,
+                         color: AppColors.greyText,
+                       ),
+                     ),
+                   ],
+                 ),
+
+                 SizedBox(height: 10),
+
+                 LinearProgressIndicator(
+                   value: 0.84, // 75%
+                   minHeight: 12,
+                   borderRadius: BorderRadius.circular(10),
+                   // Unfilled part
+                   backgroundColor: Colors.grey.shade300,
+
+                   // Filled part
+                   valueColor: AlwaysStoppedAnimation(AppColors.primary),
+                 )
+
+               ],
              ),
            ),
+
+
 
            SizedBox(height: 20),
 
 // task progress card --------------------------------------------------------------------------------------
 
-         Card(
-             elevation: 4,
-             shape: RoundedRectangleBorder(
-             borderRadius: BorderRadius.circular(18),
-             ),
-             color: AppColors.primary,
-
-             child:  Padding(
-                 padding: const EdgeInsets.all(20),
-                 child: Column(
+            CustomCard(
+              color: AppColors.primary,
+              child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                           Row(
                           children: [
-                               Text(
-                                   ".",
-                                    style: TextStyle(
-                                     fontSize: 25,
-                                        color: AppColors.success,
-                                        fontWeight: FontWeight.bold,
 
-                                        ),
-                               ),
+                            SvgPicture.asset(
+                              'assets/icons/dot_icon.svg',
+                              width: 10,
+                              height: 10,
+                              colorFilter: ColorFilter.mode(
+                                AppColors.success,
+                                BlendMode.srcIn,
+                              ),
+                            ),
 
                                SizedBox(width: 10,),
 
@@ -324,8 +318,7 @@ class _HomeTabState extends State<HomeTab> {
 
                        ],
                  ),
-             ),
-         ),
+            ),
 
            SizedBox(height: 20),
 
