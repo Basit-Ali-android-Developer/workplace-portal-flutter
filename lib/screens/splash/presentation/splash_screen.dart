@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workplace/screens/auth/signup_screen.dart';
-import '../auth/login_screen.dart';
+import '../../auth/login_screen.dart';
 import 'dart:async';
 
 

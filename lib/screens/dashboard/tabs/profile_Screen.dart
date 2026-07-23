@@ -272,7 +272,8 @@ class ProfileTab extends StatelessWidget {
                 color: AppColors.white,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 15),
-                  child: Row(
+                  child:
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
